@@ -20,4 +20,5 @@ table.table.table-hover
       th = Task.human_attribute_name(:updated_at)
       td = @task.updated_at
 
-= link_to '編集', edit_task_path, class: 'btn btn-primary me3'
+= link_to '編集', edit_task_path, class: 'btn btn-primary me-3'
+= link_to '削除', @task, data: { turbo_confirm: "タスク「#{@task.name}」を削除します。よろしいですか？", turbo_method: :delete}, class: 'btn btn-danger'
